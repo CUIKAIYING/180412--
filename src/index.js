@@ -1,21 +1,23 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import {HashRouter,Switch,Route} from "react-router-dom";
-import {Provider} from "react-redux";
+import React from "react"
+import ReactDOM from "react-dom"
+import {HashRouter,Switch,Route} from "react-router-dom"
+import {Provider} from "react-redux"
 
-import login from "./container/login/login";
-import main from "./container/main/main";
-import regist from "./container/regist/regist";
-import store from "./redux/store"
+// import App from "./App"
+import store from "./redux/store";
+import Login from "./containers/Login/login"
+import Main from "./containers/Main/main"
+import Regist from "./containers/regist/regist"
+
 
 ReactDOM.render((
     <Provider store={store}>
         <HashRouter>
             <Switch>
-                <Route path='/login' component={login}/>
-                <Route path="./regist" component={regist} />
-                <Route component={main} />
+                <Route path="/login" component={Login}/>
+                <Route path="/regist" component={Regist}/>
+                <Route component={Main}/>
             </Switch>
         </HashRouter>
     </Provider>
-    ),document.getElementById("root"));
+), document.getElementById("root"));
